@@ -1,4 +1,5 @@
 "use client"
+import { Phone, MessageCircle, } from "lucide-react";
 import { motion } from "framer-motion"
 import { Ticket, CheckCircle, ArrowRight } from "lucide-react"
 import { useEffect, useState } from "react"
@@ -27,19 +28,21 @@ export default function DandiyaNightLanding() {
     })
 
     const updateCountdown = () => {
-      const targetDate = new Date("2025-11-01T18:30:00").getTime()
-      const now = new Date().getTime()
-      const difference = targetDate - now
+  // Change the date to October 1, 2025, 18:30
+  const targetDate = new Date("2025-10-01T18:30:00").getTime()
+  const now = new Date().getTime()
+  const difference = targetDate - now
 
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        })
-      }
-    }
+  if (difference > 0) {
+    setTimeLeft({
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((difference % (1000 * 60)) / 1000),
+    })
+  }
+}
+
 
     updateCountdown()
     const timer = setInterval(updateCountdown, 1000)
@@ -158,206 +161,265 @@ export default function DandiyaNightLanding() {
           </div>
         </section>
 
-        <section id="tickets" className="py-32 bg-gradient-to-br from-white via-[#FFF8F0] to-white">
-          <div className="container mx-auto px-6 lg:px-20">
-            <div className="max-w-6xl mx-auto">
-              <motion.div
-                className="text-center mb-20"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-5xl md:text-7xl font-black mb-8 text-[#B21D00] tracking-tight">Ticket & Offers</h2>
-                <p className="text-xl md:text-2xl text-gray-600 font-medium">Choose your perfect pass</p>
-              </motion.div>
+        <section
+  id="tickets"
+  className="py-32 bg-gradient-to-br from-white via-[#FFF8F0] to-white"
+>
+  <div className="container mx-auto px-6 lg:px-20">
+    <div className="max-w-6xl mx-auto">
+      {/* Heading */}
+      <motion.div
+        className="text-center mb-20"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-5xl md:text-7xl font-black mb-16 text-[#B21D00] tracking-tight text-center">
+  Ticket & Offers
+</h2>
+        <p className="text-xl md:text-2xl text-gray-600 font-medium">
+          Choose your perfect pass
+        </p>
+      </motion.div>
 
-              <div className="grid lg:grid-cols-3 gap-10 mb-16">
-                <motion.div
-                  className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden group border-0"
-                  whileHover={{ y: -12 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                    <Badge className="bg-gradient-to-r from-[#B21D00] to-[#8a1500] text-white px-6 py-3 rounded-full font-black text-sm shadow-xl">
-                      Early Bird
-                    </Badge>
-                  </div>
+      {/* Cards */}
+      <div className="grid lg:grid-cols-3 gap-10 mb-16">
+        {/* Event Pass - Early Bird */}
+        <motion.div
+          className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group border-0 overflow-visible"
+          whileHover={{ y: -12 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+            <Badge className="bg-gradient-to-r from-[#B21D00] to-[#8a1500] text-white px-6 py-3 rounded-full font-black text-sm shadow-xl">
+              Early Bird
+            </Badge>
+          </div>
 
-                  <div className="p-10 pt-16 h-full flex flex-col">
-                    <div className="flex-1 space-y-8">
-                      <div className="text-center space-y-3">
-                        <h3 className="text-3xl md:text-4xl font-black text-[#B21D00]">Event Pass</h3>
-                        <p className="text-gray-600 font-semibold text-lg">Valid till October 1st</p>
-                      </div>
-
-                      <div className="text-center space-y-3">
-                        <div className="flex items-center justify-center gap-4">
-                          <span className="line-through text-gray-400 text-2xl font-semibold">₹1499</span>
-                          <span className="text-5xl font-black text-[#B21D00]">₹1299</span>
-                        </div>
-                      </div>
-
-                      <div className="space-y-4">
-                        {[
-                          "For 1 Person",
-                          "Unlimited Food",
-                          "Live DJ",
-                          "Dreamy Ambience",
-                          "Live Games And Prizes",
-                          "Open Area Dandiya",
-                          "Dandiya Sticks Included",
-                          "Photography",
-                        ].map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-4">
-                            <CheckCircle className="w-6 h-6 text-[#B21D00] flex-shrink-0" />
-                            <span className="text-gray-700 font-medium text-lg">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mt-10">
-                      <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                        <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-xl shadow-xl">
-                          Get Event Pass
-                        </Button>
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden group border-0"
-                  whileHover={{ y: -12 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <div className="p-10 h-full flex flex-col">
-                    <div className="flex-1 space-y-8">
-                      <div className="text-center space-y-3">
-                        <h3 className="text-3xl md:text-4xl font-black text-[#B21D00]">Couple Pass</h3>
-                        <p className="text-gray-600 font-semibold text-lg">Perfect for two</p>
-                      </div>
-
-                      <div className="text-center space-y-3">
-                        <div className="flex items-center justify-center gap-4">
-                          <span className="line-through text-gray-400 text-2xl font-semibold">₹2799</span>
-                          <span className="text-5xl font-black text-[#B21D00]">₹2399</span>
-                        </div>
-                      </div>
-
-                      <div className="space-y-4">
-                        {[
-                          "For Couple",
-                          "Unlimited Food",
-                          "Live DJ",
-                          "Dreamy Ambience",
-                          "Live Games And Prizes",
-                          "Open Area Dandiya",
-                          "Dandiya Sticks Included",
-                          "Photography",
-                        ].map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-4">
-                            <CheckCircle className="w-6 h-6 text-[#B21D00] flex-shrink-0" />
-                            <span className="text-gray-700 font-medium text-lg">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mt-10">
-                      <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                        <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-xl shadow-xl">
-                          Get Couple Pass
-                        </Button>
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden group border-0"
-                  whileHover={{ y: -12 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7 }}
-                >
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                    <Badge className="bg-gradient-to-r from-[#B21D00] to-[#8a1500] text-white px-6 py-3 rounded-full font-black text-sm shadow-xl">
-                      Best Value
-                    </Badge>
-                  </div>
-
-                  <div className="p-10 pt-16 h-full flex flex-col">
-                    <div className="flex-1 space-y-8">
-                      <div className="text-center space-y-3">
-                        <h3 className="text-3xl md:text-4xl font-black text-[#B21D00]">VIP Pass</h3>
-                        <p className="text-gray-600 font-semibold text-lg">6 People - Special Discount</p>
-                      </div>
-
-                      <div className="text-center space-y-3">
-                        <div className="flex items-center justify-center gap-4">
-                          <span className="line-through text-gray-400 text-2xl font-semibold">₹15999</span>
-                          <span className="text-5xl font-black text-[#B21D00]">₹13999</span>
-                        </div>
-                      </div>
-
-                      <div className="space-y-4">
-                        {[
-                          "Entry For 6 People",
-                          "Unlimited Food",
-                          "Live DJ",
-                          "Dreamy Ambience",
-                          "Live Games And Prizes",
-                          "Open Area Dandiya",
-                          "Dandiya Sticks Included",
-                          "Photography",
-                          "Exclusive Lounge Seating",
-                        ].map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-4">
-                            <CheckCircle className="w-6 h-6 text-[#B21D00] flex-shrink-0" />
-                            <span className="text-gray-700 font-medium text-lg">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mt-10">
-                      <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                        <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-xl shadow-xl">
-                          Get VIP Pass
-                        </Button>
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
+          <div className="p-10 pt-16 h-full flex flex-col">
+            <div className="flex-1 space-y-8">
+              <div className="text-center space-y-3">
+                <h3 className="text-3xl md:text-4xl font-black text-[#B21D00]">
+                  Event Pass
+                </h3>
+                <p className="text-gray-600 font-semibold text-lg">
+                  Valid till October 1st
+                </p>
               </div>
 
-              <motion.div
-                className="text-center bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-2xl"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <div className="flex items-center justify-center gap-4 mb-8">
-                  <Clock className="w-8 h-8 text-[#B21D00]" />
-                  <p className="text-2xl font-black text-[#B21D00]">Limited Passes Available – Hurry!</p>
+              <div className="text-center space-y-3">
+                <div className="flex items-center justify-center gap-4">
+                  <span className="line-through text-gray-400 text-2xl font-semibold">
+                    ₹1499
+                  </span>
+                  <span className="text-5xl font-black text-[#B21D00]">
+                    ₹1299
+                  </span>
                 </div>
+              </div>
 
-                <Button
-                  className="bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black px-12 py-6 rounded-2xl shadow-2xl text-xl transition-all duration-300 hover:scale-105"
-                  data-scroll-to="tickets"
-                >
-                  <Ticket className="w-6 h-6 mr-3" />
-                  Grab Your Pass Now
-                </Button>
-              </motion.div>
+              <div className="space-y-4">
+                {[
+                  "For 1 Person",
+                  "Unlimited Food",
+                  "Live DJ",
+                  "Dreamy Ambience",
+                  "Live Games And Prizes",
+                  "Open Area Dandiya",
+                  "Dandiya Sticks Included",
+                  "Photography",
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-4">
+                    <CheckCircle className="w-6 h-6 text-[#B21D00] flex-shrink-0" />
+                    <span className="text-gray-700 font-medium text-lg">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10">
+              <a
+  href="https://imjo.in/NeXuTg"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-xl shadow-xl">
+    Get Event Pass
+  </Button>
+</a>
             </div>
           </div>
-        </section>
+        </motion.div>
+
+        {/* Couple Pass */}
+        <motion.div
+          className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group border-0 overflow-visible"
+          whileHover={{ y: -12 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="p-10 h-full flex flex-col">
+            <div className="flex-1 space-y-8">
+              <div className="text-center space-y-3">
+                <h3 className="text-3xl md:text-4xl font-black text-[#B21D00]">
+                  Couple Pass
+                </h3>
+                <p className="text-gray-600 font-semibold text-lg">
+                  Perfect for two
+                </p>
+              </div>
+
+              <div className="text-center space-y-3">
+                <div className="flex items-center justify-center gap-4">
+                  <span className="line-through text-gray-400 text-2xl font-semibold">
+                    ₹2799
+                  </span>
+                  <span className="text-5xl font-black text-[#B21D00]">
+                    ₹2399
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  "For Couple",
+                  "Unlimited Food",
+                  "Live DJ",
+                  "Dreamy Ambience",
+                  "Live Games And Prizes",
+                  "Open Area Dandiya",
+                  "Dandiya Sticks Included",
+                  "Photography",
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-4">
+                    <CheckCircle className="w-6 h-6 text-[#B21D00] flex-shrink-0" />
+                    <span className="text-gray-700 font-medium text-lg">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10">
+              {/* Couple Pass Button */}
+<a
+  href="https://imjo.in/bzr4TP"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-xl shadow-xl">
+    Get Couple Pass
+  </Button>
+</a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* VIP Pass - Best Value */}
+        <motion.div
+          className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group border-0 overflow-visible"
+          whileHover={{ y: -12 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+            <Badge className="bg-gradient-to-r from-[#B21D00] to-[#8a1500] text-white px-6 py-3 rounded-full font-black text-sm shadow-xl">
+              Best Value
+            </Badge>
+          </div>
+
+          <div className="p-10 pt-16 h-full flex flex-col">
+            <div className="flex-1 space-y-8">
+              <div className="text-center space-y-3">
+                <h3 className="text-3xl md:text-4xl font-black text-[#B21D00]">
+                  VIP Pass
+                </h3>
+                <p className="text-gray-600 font-semibold text-lg">
+                  6 People - Special Discount
+                </p>
+              </div>
+
+              <div className="text-center space-y-3">
+                <div className="flex items-center justify-center gap-4">
+                  <span className="line-through text-gray-400 text-2xl font-semibold">
+                    ₹15999
+                  </span>
+                  <span className="text-5xl font-black text-[#B21D00]">
+                    ₹13999
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  "Entry For 6 People",
+                  "Unlimited Food",
+                  "Live DJ",
+                  "Dreamy Ambience",
+                  "Live Games And Prizes",
+                  "Open Area Dandiya",
+                  "Dandiya Sticks Included",
+                  "Photography",
+                  "Exclusive Lounge Seating",
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-4">
+                    <CheckCircle className="w-6 h-6 text-[#B21D00] flex-shrink-0" />
+                    <span className="text-gray-700 font-medium text-lg">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-10">
+              <a
+                href="https://wa.me/919876543210"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-xl shadow-xl">
+                  Get VIP Pass
+                </Button>
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Bottom CTA */}
+      <motion.div
+        className="text-center bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-2xl"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <Clock className="w-8 h-8 text-[#B21D00]" />
+          <p className="text-2xl font-black text-[#B21D00]">
+            Limited Passes Available – Hurry!
+          </p>
+        </div>
+
+        <Button
+          className="bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black px-12 py-6 rounded-2xl shadow-2xl text-xl transition-all duration-300 hover:scale-105"
+          data-scroll-to="tickets"
+        >
+          <Ticket className="w-6 h-6 mr-3" />
+          Grab Your Pass Now
+        </Button>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
 
         <ApplicantDiscountSection />
 
@@ -371,7 +433,10 @@ export default function DandiyaNightLanding() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-5xl md:text-7xl font-black mb-8 text-[#B21D00] tracking-tight">Event Details</h2>
+                
+                <h3 className="text-5xl md:text-7xl font-black mb-16 text-[#B21D00] tracking-tight text-center">
+  Event Details
+</h3>
                 <p className="text-xl md:text-2xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
                   Everything you need to know about the celebration
                 </p>
@@ -437,16 +502,20 @@ export default function DandiyaNightLanding() {
                       <div className="space-y-6">
                         <p className="text-gray-600 text-xl font-semibold">6:30 PM Onwards</p>
 
+                        
+
                         <Button
-                          onClick={() => {
-                            const daySelect = document.getElementById("event-day") as HTMLSelectElement
-                            const selectedDay = daySelect.value
-                            window.location.href = `/pass?day=${selectedDay}`
-                          }}
-                          className="w-full px-8 py-5 bg-gradient-to-r from-[#B21D00] to-[#8a1500] text-white font-black rounded-2xl hover:from-[#8a1500] hover:to-[#B21D00] transition-all duration-300 hover:scale-105 text-xl shadow-xl"
-                        >
-                          Book Now
-                        </Button>
+  onClick={() => {
+    const ticketsSection = document.getElementById("tickets")
+    if (ticketsSection) {
+      ticketsSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }}
+  className="w-full px-8 py-5 bg-gradient-to-r from-[#B21D00] to-[#8a1500] text-white font-black rounded-2xl hover:from-[#8a1500] hover:to-[#B21D00] transition-all duration-300 hover:scale-105 text-xl shadow-xl"
+>
+  Book Now
+</Button>
+
                       </div>
                     </CardContent>
                   </Card>
@@ -459,7 +528,9 @@ export default function DandiyaNightLanding() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-4xl md:text-5xl font-black mb-16 text-center text-[#B21D00]">Daily Schedule</h3>
+                <h3 className="text-5xl md:text-7xl font-black mb-16 text-[#B21D00] tracking-tight text-center">
+  Daily Schedule
+</h3>
                 <div className="grid md:grid-cols-3 gap-10 mb-20">
                   {[
                     {
@@ -557,14 +628,14 @@ export default function DandiyaNightLanding() {
           <div className="container mx-auto px-6 lg:px-20">
             <div className="max-w-7xl mx-auto">
               <motion.h2
-                initial={{ opacity: 0, y: -30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-5xl md:text-7xl font-black mb-20 text-[#B21D00] tracking-tight"
-              >
-                Special Guests & Performers
-              </motion.h2>
+  initial={{ opacity: 0, y: -30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="text-5xl md:text-7xl font-black mb-16 text-[#B21D00] tracking-tight text-center"
+>
+  Special Guests & Performers
+</motion.h2>
 
               <div className="relative">
                 {/* Carousel Container */}
@@ -683,7 +754,9 @@ export default function DandiyaNightLanding() {
                 className="mt-20"
               >
                 <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-2xl">
-                  <h3 className="text-3xl md:text-4xl font-black text-[#B21D00] mb-8">Featured Highlights</h3>
+                  <h3 className="text-5xl md:text-7xl font-black mb-16 text-[#B21D00] tracking-tight text-center">
+  Featured Highlights
+</h3>
                   <div className="grid md:grid-cols-3 gap-8">
                     <div className="text-center space-y-4">
                       <div className="text-4xl">🎤</div>
@@ -707,18 +780,75 @@ export default function DandiyaNightLanding() {
           </div>
         </section>
 
+
+    <section className="py-20 px-6 bg-[#fff8f3]">
+      <div className="max-w-6xl mx-auto">
+        {/* Outer Card - same style as Featured Highlights */}
+        <div className="bg-white rounded-2xl shadow-xl p-10 text-center">
+          {/* Section Heading */}
+          <h2 className="text-5xl md:text-7xl font-black mb-16 text-[#B21D00] tracking-tight text-center">
+  Contact & Support
+</h2>
+
+          {/* Grid - same spacing & font as Featured Highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* WhatsApp Support */}
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <MessageCircle className="w-12 h-12 text-red-700 mx-auto mb-4" />
+              <h3 className="text-lg font-bold text-red-700">
+                WhatsApp Support
+              </h3>
+              <p className="mt-2 text-gray-600">
+                Chat with us on WhatsApp for quick support
+              </p>
+            </a>
+
+            {/* Call Us */}
+            <a href="tel:+919876543210" className="block">
+              <Phone className="w-12 h-12 text-red-700 mx-auto mb-4" />
+              <h3 className="text-lg font-bold text-red-700">Call Us</h3>
+              <p className="mt-2 text-gray-600">+91 9876543210</p>
+            </a>
+
+            {/* Location */}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Aura+Lawns,+Revenue+plot+no+3,+infront+of+Hotel+Shubham+Grand,+Patia,+Bhubaneswar,+Odisha+751024"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <MapPin className="w-12 h-12 text-red-700 mx-auto mb-4" />
+              <h3 className="text-lg font-bold text-red-700">Location</h3>
+              <p className="mt-2 text-gray-600">
+                Aura Lawns, Revenue plot no 3, infront of Hotel Shubham Grand,
+                Patia, Bhubaneswar, Odisha 751024
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
         <section className="py-32 bg-gradient-to-br from-white via-[#FFF8F0] to-white">
           <div className="container mx-auto px-6 lg:px-20">
             <div className="max-w-4xl mx-auto">
               <motion.h2
-                className="text-5xl md:text-6xl font-black text-center mb-20 text-[#B21D00] tracking-tight"
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                Frequently Asked Questions
-              </motion.h2>
+  className="text-5xl md:text-7xl font-black mb-16 text-[#B21D00] tracking-tight text-center"
+  initial={{ opacity: 0, y: -20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
+  Frequently Asked Questions
+</motion.h2>
 
               <div className="space-y-8">
                 {[

@@ -49,10 +49,14 @@ export default function ApplicantDiscountSection() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left side - Logo */}
               <div className="flex justify-center">
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <img src="/logo.webp" alt="Logo" className="h-48 md:h-64 lg:h-72 object-contain" />
-                </div>
-              </div>
+  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-[600px] h-[600px] flex items-center justify-center">
+    <img
+      src="/Sponsors.webp"
+      alt="Logo"
+      className="w-full h-full object-contain"
+    />
+  </div>
+</div>
 
               {/* Right side - Enhanced coupon form */}
               <div className="space-y-8">

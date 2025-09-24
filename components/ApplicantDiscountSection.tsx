@@ -38,57 +38,54 @@ export default function ApplicantDiscountSection() {
   }
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-[#B21D00]/5 to-[#B21D00]/10">
+    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-20 bg-gradient-to-br from-[#B21D00]/5 to-[#B21D00]/10">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-0">
-          <div className="p-8 md:p-12">
-            <h2 className="text-3xl md:text-5xl font-black mb-12 text-center text-[#B21D00] tracking-tight">
+          <div className="p-6 sm:p-8 md:p-12">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-12 sm:mb-16 md:mb-16 text-[#B21D00] tracking-tight text-center">
               Exclusive Offers & Affiliates
             </h2>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-12 items-center">
               {/* Left side - Logo */}
               <div className="flex justify-center">
-  <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-[600px] h-[600px] flex items-center justify-center">
-    <img
-      src="/Sponsors.webp"
-      alt="Logo"
-      className="w-full h-full object-contain"
-    />
-  </div>
-</div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[600px] aspect-square flex items-center justify-center">
+                  <img
+                    src="/Sponsors.webp"
+                    alt="Logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
 
-              {/* Right side - Enhanced coupon form */}
-              <div className="space-y-8">
-                <div className="bg-gradient-to-br from-[#B21D00]/5 to-[#B21D00]/10 rounded-3xl p-8 space-y-6">
-                  <div className="space-y-4">
+              {/* Right side - Coupon Form */}
+              <div className="space-y-6 sm:space-y-8">
+                <div className="bg-gradient-to-br from-[#B21D00]/5 to-[#B21D00]/10 rounded-3xl p-6 sm:p-8 space-y-4 sm:space-y-6">
+                  <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-[#B21D00]/10 rounded-xl">
                         <Key className="w-6 h-6 text-[#B21D00]" />
                       </div>
-                      <div>
-                        <p className="font-bold text-xl text-[#B21D00]">
-                          Use Code: <span className="font-black">EARLYBIRD50</span>
-                        </p>
-                      </div>
+                      <p className="font-bold text-lg sm:text-xl text-[#B21D00]">
+                        Use Code: <span className="font-black">EARLYBIRD50</span>
+                      </p>
                     </div>
-
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-green-100 rounded-xl">
                         <Ticket className="w-6 h-6 text-green-600" />
                       </div>
-                      <p className="text-gray-700 font-semibold text-lg">Get 50% OFF till 30th Sept</p>
+                      <p className="text-gray-700 font-semibold text-base sm:text-lg">Get 50% OFF till 30th Sept</p>
                     </div>
-
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-orange-100 rounded-xl">
                         <ArrowRight className="w-6 h-6 text-orange-600" />
                       </div>
-                      <p className="text-[#B21D00] font-bold text-lg">Hurry! Limited Passes</p>
+                      <p className="text-[#B21D00] font-bold text-base sm:text-lg">Hurry! Limited Passes</p>
                     </div>
                   </div>
                 </div>
 
+                {/* Input Fields */}
                 <div className="space-y-4">
                   {[
                     { placeholder: "Name", value: name, onChange: setName, type: "text" },
@@ -99,22 +96,22 @@ export default function ApplicantDiscountSection() {
                       key={idx}
                       type={field.type}
                       placeholder={field.placeholder}
-                      className="w-full p-4 rounded-2xl border-2 border-gray-200 bg-white text-gray-800 focus:ring-2 focus:ring-[#B21D00] focus:border-[#B21D00] transition-all font-medium text-lg"
+                      className="w-full p-3 sm:p-4 rounded-2xl border-2 border-gray-200 bg-white text-gray-800 focus:ring-2 focus:ring-[#B21D00] focus:border-[#B21D00] transition-all font-medium text-base sm:text-lg"
                       value={field.value}
                       onChange={(e) => field.onChange(e.target.value)}
                     />
                   ))}
 
-                  <div className="flex gap-3">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <input
                       type="text"
                       placeholder="Enter Coupon Code"
-                      className="flex-1 p-4 rounded-2xl border-2 border-gray-200 bg-white text-gray-800 focus:ring-2 focus:ring-[#B21D00] focus:border-[#B21D00] transition-all font-medium text-lg"
+                      className="flex-1 p-3 sm:p-4 rounded-2xl border-2 border-gray-200 bg-white text-gray-800 focus:ring-2 focus:ring-[#B21D00] focus:border-[#B21D00] transition-all font-medium text-base sm:text-lg"
                       value={coupon}
                       onChange={(e) => setCoupon(e.target.value)}
                     />
                     <Button
-                      className="bg-[#B21D00] text-white font-bold px-6 py-4 rounded-2xl hover:bg-[#8a1500] transition-all duration-300 hover:scale-105"
+                      className="bg-[#B21D00] text-white font-bold px-6 py-3 sm:py-4 rounded-2xl hover:bg-[#8a1500] transition-all duration-300 hover:scale-105"
                       onClick={applyCoupon}
                     >
                       Apply
@@ -122,22 +119,23 @@ export default function ApplicantDiscountSection() {
                   </div>
                 </div>
 
+                {/* Action Button & Message */}
                 <div className="text-center space-y-4">
                   <Button
-                    className="w-full bg-[#B21D00] text-white font-bold py-4 px-8 rounded-2xl text-xl hover:bg-[#8a1500] transition-all duration-300 hover:scale-105 shadow-lg"
+                    className="w-full bg-[#B21D00] text-white font-bold py-4 px-6 sm:px-8 rounded-2xl text-lg sm:text-xl hover:bg-[#8a1500] transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center gap-3"
                     onClick={handleRegister}
                   >
-                    <Ticket className="w-6 h-6 mr-3" />
+                    <Ticket className="w-5 h-5 sm:w-6 sm:h-6" />
                     Grab Your Discounted Pass Now
                   </Button>
 
                   {message && (
-                    <div className="bg-white rounded-2xl p-4 shadow-md">
-                      <p className="font-semibold flex items-center gap-3 justify-center text-lg">
+                    <div className="bg-white rounded-2xl p-3 sm:p-4 shadow-md">
+                      <p className="font-semibold flex items-center gap-2 sm:gap-3 justify-center text-base sm:text-lg">
                         {message.includes("⚠️") ? (
-                          <AlertCircle className="w-6 h-6 text-orange-500" />
+                          <AlertCircle className="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" />
                         ) : (
-                          <CheckCircle className="w-6 h-6 text-[#B21D00]" />
+                          <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#B21D00]" />
                         )}
                         <span className={message.includes("⚠️") ? "text-orange-600" : "text-[#B21D00]"}>
                           {message.replace("⚠️ ", "").replace("✅ ", "")}

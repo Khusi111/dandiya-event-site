@@ -393,7 +393,7 @@ export default function DandiyaNightLanding() {
 
             <div className="mt-6 sm:mt-10">
               <a
-  href="https://docs.google.com/forms/d/e/1FAIpQLSeMsY8urc-kDVtejvsFoINtgGkp-4n3kN--ERPv-4OUjJG9Wg/viewform?usp=header"
+  href="https://ringsandknotss.myinstamojo.com/product/dandiya-night-vip-pass/" 
   target="_blank"
   rel="noopener noreferrer"
 >

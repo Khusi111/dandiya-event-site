@@ -254,14 +254,15 @@ export default function DandiyaNightLanding() {
 
             <div className="mt-6 sm:mt-10">
               <a
-                href="https://imjo.in/NeXuTg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg sm:text-xl shadow-xl">
-                  Get Event Pass
-                </Button>
-              </a>
+  href="https://ringsandknotss.myinstamojo.com/product/dandiya-night-event-pass/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg sm:text-xl shadow-xl">
+    Get Event Pass
+  </Button>
+</a>
+
             </div>
           </div>
         </motion.div>
@@ -319,14 +320,15 @@ export default function DandiyaNightLanding() {
 
             <div className="mt-6 sm:mt-10">
               <a
-                href="https://imjo.in/bzr4TP"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg sm:text-xl shadow-xl">
-                  Get Couple Pass
-                </Button>
-              </a>
+  href="https://ringsandknotss.myinstamojo.com/product/dandiya-night-couple-pass/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg sm:text-xl shadow-xl">
+    Get Couple Pass
+  </Button>
+</a>
+
             </div>
           </div>
         </motion.div>
@@ -391,14 +393,15 @@ export default function DandiyaNightLanding() {
 
             <div className="mt-6 sm:mt-10">
               <a
-                href="https://wa.me/919876543210"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg sm:text-xl shadow-xl">
-                  Get VIP Pass
-                </Button>
-              </a>
+  href="https://docs.google.com/forms/d/e/1FAIpQLSeMsY8urc-kDVtejvsFoINtgGkp-4n3kN--ERPv-4OUjJG9Wg/viewform?usp=header"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg sm:text-xl shadow-xl">
+    Get VIP Pass
+  </Button>
+</a>
+
             </div>
           </div>
         </motion.div>
@@ -948,6 +951,7 @@ export default function DandiyaNightLanding() {
           Book Now
         </Button>
       </div>
+      
     </div>
   )
 }

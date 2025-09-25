@@ -60,30 +60,15 @@ export default function ApplicantDiscountSection() {
 
               {/* Right side - Coupon Form */}
               <div className="space-y-6 sm:space-y-8">
-                <div className="bg-gradient-to-br from-[#B21D00]/5 to-[#B21D00]/10 rounded-3xl p-6 sm:p-8 space-y-4 sm:space-y-6">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-[#B21D00]/10 rounded-xl">
-                        <Key className="w-6 h-6 text-[#B21D00]" />
-                      </div>
-                      <p className="font-bold text-lg sm:text-xl text-[#B21D00]">
-                        Use Code: <span className="font-black">EARLYBIRD50</span>
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-green-100 rounded-xl">
-                        <Ticket className="w-6 h-6 text-green-600" />
-                      </div>
-                      <p className="text-gray-700 font-semibold text-base sm:text-lg">Get 50% OFF till 30th Sept</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-orange-100 rounded-xl">
-                        <ArrowRight className="w-6 h-6 text-orange-600" />
-                      </div>
-                      <p className="text-[#B21D00] font-bold text-base sm:text-lg">Hurry! Limited Passes</p>
-                    </div>
-                  </div>
-                </div>
+                <div className="bg-gradient-to-br from-[#B21D00]/5 to-[#B21D00]/10 rounded-3xl p-6 sm:p-8">
+  <div className="flex items-center gap-3">
+    <div className="p-2 bg-orange-100 rounded-xl">
+      <ArrowRight className="w-6 h-6 text-orange-600" />
+    </div>
+    <p className="text-[#B21D00] font-bold text-base sm:text-lg">Hurry! Limited Offers</p>
+  </div>
+</div>
+
 
                 {/* Input Fields */}
                 <div className="space-y-4">

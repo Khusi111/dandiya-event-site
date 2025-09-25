@@ -195,7 +195,7 @@ export default function DandiyaNightLanding() {
 
       {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-12 sm:mb-16">
-        {/* Event Pass */}
+        {/* Event Pass - Early Bird */}
         <motion.div
           className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group border-0 overflow-visible"
           whileHover={{ y: -8 }}
@@ -252,22 +252,16 @@ export default function DandiyaNightLanding() {
               </div>
             </div>
 
-            {/* QR + UPI Link */}
-            <div className="mt-6 sm:mt-10 text-center">
-              <img
-                src="/qr/event.png"
-                alt="Event Pass QR"
-                className="mx-auto mb-4 w-48 sm:w-56"
-              />
+            <div className="mt-6 sm:mt-10">
               <a
-                href="upi://pay?pa=6372249694@axl&pn=Dandiya+Night+2025&am=1299&tn=Event+Pass+DANDIYA200"
-                className="ticket-link inline-block bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 px-8 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105"
+                href="https://imjo.in/NeXuTg"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Pay ₹1299
+                <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg sm:text-xl shadow-xl">
+                  Get Event Pass
+                </Button>
               </a>
-              <p className="text-sm sm:text-base text-gray-600 mt-2">
-                Scan QR or click to pay on mobile
-              </p>
             </div>
           </div>
         </motion.div>
@@ -323,27 +317,21 @@ export default function DandiyaNightLanding() {
               </div>
             </div>
 
-            {/* QR + UPI Link */}
-            <div className="mt-6 sm:mt-10 text-center">
-              <img
-                src="/qr/couple.png"
-                alt="Couple Pass QR"
-                className="mx-auto mb-4 w-48 sm:w-56"
-              />
+            <div className="mt-6 sm:mt-10">
               <a
-                href="upi://pay?pa=6372249694@axl&pn=Dandiya+Night+2025&am=2399&tn=Couple+Pass+COUPLE300"
-                className="ticket-link inline-block bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 px-8 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105"
+                href="https://imjo.in/bzr4TP"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Pay ₹2399
+                <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg sm:text-xl shadow-xl">
+                  Get Couple Pass
+                </Button>
               </a>
-              <p className="text-sm sm:text-base text-gray-600 mt-2">
-                Scan QR or click to pay on mobile
-              </p>
             </div>
           </div>
         </motion.div>
 
-        {/* VIP Pass */}
+        {/* VIP Pass - Best Value */}
         <motion.div
           className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group border-0 overflow-visible"
           whileHover={{ y: -8 }}
@@ -401,26 +389,43 @@ export default function DandiyaNightLanding() {
               </div>
             </div>
 
-            {/* QR + UPI Link */}
-            <div className="mt-6 sm:mt-10 text-center">
-              <img
-                src="/qr/vip.png"
-                alt="VIP Pass QR"
-                className="mx-auto mb-4 w-48 sm:w-56"
-              />
+            <div className="mt-6 sm:mt-10">
               <a
-                href="upi://pay?pa=6372249694@axl&pn=Dandiya+Night+2025&am=13999&tn=VIP+Pass+VIP2000"
-                className="ticket-link inline-block bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 px-8 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105"
+                href="https://wa.me/919876543210"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Pay ₹13999
+                <Button className="w-full bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg sm:text-xl shadow-xl">
+                  Get VIP Pass
+                </Button>
               </a>
-              <p className="text-sm sm:text-base text-gray-600 mt-2">
-                Scan QR or click to pay on mobile
-              </p>
             </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Bottom CTA */}
+      <motion.div
+        className="text-center bg-white/90 backdrop-blur-sm rounded-3xl p-8 sm:p-12 shadow-2xl"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+          <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-[#B21D00]" />
+          <p className="text-lg sm:text-2xl font-black text-[#B21D00]">
+            Limited Passes Available – Hurry!
+          </p>
+        </div>
+
+        <Button
+          className="bg-gradient-to-r from-[#B21D00] to-[#8a1500] hover:from-[#8a1500] hover:to-[#B21D00] text-white font-black px-6 sm:px-12 py-4 sm:py-6 rounded-2xl shadow-2xl text-lg sm:text-xl transition-all duration-300 hover:scale-105"
+          data-scroll-to="tickets"
+        >
+          <Ticket className="w-5 sm:w-6 h-5 sm:h-6 mr-2 sm:mr-3" />
+          Grab Your Pass Now
+        </Button>
+      </motion.div>
     </div>
   </div>
 </section>
